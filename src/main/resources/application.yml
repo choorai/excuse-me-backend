@@ -28,3 +28,11 @@ logging:
           descriptor:
             sql: trace
 
+management:
+  endpoint:
+    health:
+      show-components: always
+  endpoints:
+    web:
+      exposure:
+        include: health
