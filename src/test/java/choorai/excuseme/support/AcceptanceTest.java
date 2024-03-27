@@ -23,6 +23,9 @@ public abstract class AcceptanceTest {
     @Container
     protected static MySQLContainer container;
 
+    @LocalServerPort
+    private int port;
+
     static {
         container = (MySQLContainer) new MySQLContainer("mysql:8.0")
                 .withDatabaseName("excuse-me")
@@ -40,9 +43,6 @@ public abstract class AcceptanceTest {
         registry.add("spring.flyway.user", () -> ROOT);
         registry.add("spring.flyway.password", () -> ROOT_PASSWORD);
     }
-
-    @LocalServerPort
-    private int port;
 
     @BeforeEach
     void delete() {
