@@ -25,7 +25,6 @@ public class DataInitializer {
 
     private final List<String> truncationDMLs = new ArrayList<>();
 
-    @BeforeEach
     @Transactional
     public void deleteAll() {
         if (truncationDMLs.isEmpty()) {
